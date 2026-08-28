@@ -1,5 +1,7 @@
 # ChromaRecover
 
+[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
+
 ![Python 3.10–3.13](https://img.shields.io/badge/Python-3.10%E2%80%933.13-3776AB?logo=python&logoColor=white)
 ![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-3DA639)
 ![Experimental Alpha](https://img.shields.io/badge/Status-Experimental%20Alpha-E69500)
@@ -29,7 +31,7 @@ evidence map makes the spatial signal visible; this deterministic run is `ok`, w
 with equally plausible competing masks remains `uncertain`. That is intentional
 evidence-first behavior, not an OCR promise.
 
-## Research architecture
+## System architecture
 
 ![ChromaRecover evidence-first research architecture](docs/assets/chromarecover-architecture.png)
 
@@ -225,8 +227,9 @@ release gates are tracked in [the public roadmap](docs/roadmap.md); new features
 to arrive with both a regression case and a hard negative.
 
 Small, bounded tasks suitable for a first contribution are prepared in
-[the contributor ideas](docs/contributor-ideas.md). They can become `good first issue` tickets
-after the public GitHub repository exists.
+[the contributor ideas](docs/contributor-ideas.md), with selected tasks now published as
+[`good first issue`](https://github.com/niansia/ChromaRecover/labels/good%20first%20issue) and
+[`help wanted`](https://github.com/niansia/ChromaRecover/labels/help%20wanted) tickets.
 
 ## Development checks
 
@@ -253,8 +256,9 @@ not a cross-machine performance guarantee.
 
 To create a source archive without local environments or `tmp/`, run the Windows packaging
 helper `powershell -File scripts/package_source.ps1`; it packages tracked files from `HEAD`
-only. PyPI publication is intentionally deferred until the public-alpha checks pass; the
-current install command does not pretend a registry release already exists.
+only. Package-registry publication remains a separate release operation; until it is
+completed, the install instructions above deliberately use the tracked source instead of
+claiming that `pip install chromarecover` is available.
 
 ChromaRecover is licensed under Apache-2.0. Community governance will continue to mature
 throughout the Public Alpha cycle and on the path toward 1.0.

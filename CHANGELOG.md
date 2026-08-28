@@ -3,6 +3,23 @@
 All notable changes will be documented here. The project follows Semantic Versioning once
 its public API reaches 1.0.
 
+## Unreleased
+
+### Added
+
+- Add complete Traditional Chinese and Simplified Chinese README translations with a
+  language switcher on every edition.
+- Add a standard Apache `NOTICE` file for project copyright attribution.
+
+### Changed
+
+- Keep the `LICENSE` file byte-for-byte aligned with the standard Apache-2.0 text so GitHub
+  can identify the repository license; move project attribution to `NOTICE`.
+- Present the README architecture as a system architecture and link directly to the live
+  starter issues now that the repository is public.
+- Make Dependabot ignore NumPy and OpenCV major-version updates until a dedicated
+  compatibility matrix validates them.
+
 ## 0.3.0a4 - 2026-08-29
 
 ### Security

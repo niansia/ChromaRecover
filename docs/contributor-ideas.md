@@ -1,7 +1,8 @@
 # Starter contributor ideas
 
-These tasks are intentionally bounded so they can become `good first issue` tickets after
-the public repository exists. Discuss scope before adding a new runtime dependency.
+These tasks are intentionally bounded for `good first issue` and `help wanted` tickets.
+Selected tasks are now published in the issue tracker. Discuss scope before adding a new
+runtime dependency.
 
 ## Add a synthetic structure family
 
