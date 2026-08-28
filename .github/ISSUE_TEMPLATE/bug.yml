@@ -1,0 +1,61 @@
+name: Software bug
+description: Report a crash, installation problem, API contract issue, or packaging defect.
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the Recovery failure case form when the main problem is a missed structure,
+        false positive, perspective, glare, moire, or semantics result. Do not post secrets,
+        exploit details, sensitive images, or full local paths here.
+  - type: input
+    id: version
+    attributes:
+      label: ChromaRecover version or commit
+      placeholder: 0.3.0a4
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python, NumPy and OpenCV versions.
+    validations:
+      required: true
+  - type: dropdown
+    id: interface
+    attributes:
+      label: Interface
+      options:
+        - Python API
+        - CLI
+        - Installation or packaging
+        - CI or contributor tooling
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the shortest safe code or command that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Remove usernames, private paths, image data, tokens and other sensitive material.
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Security check
+      options:
+        - label: This report does not contain vulnerability or exploit details.
+          required: true

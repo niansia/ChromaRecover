@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chromarecover"
+version = "0.3.0a4"
+description = "Explainable recovery of spatial structure carried by subtle color differences"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "ChromaRecover contributors" }]
+keywords = [
+  "computer-vision",
+  "image-processing",
+  "color",
+  "segmentation",
+  "accessibility",
+  "opencv",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Multimedia :: Graphics :: Capture :: Digital Camera",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "numpy>=1.24,<3",
+  "Pillow>=10.0",
+  "opencv-python-headless>=4.8,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.8"]
+research = ["pyarrow>=14"]
+
+[project.scripts]
+chromarecover = "chromarecover.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/niansia/ChromaRecover"
+Repository = "https://github.com/niansia/ChromaRecover"
+Issues = "https://github.com/niansia/ChromaRecover/issues"
+Changelog = "https://github.com/niansia/ChromaRecover/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chromarecover"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["tmp"]

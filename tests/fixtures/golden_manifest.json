@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "purpose": "Fixed, source-grouped generated regression inventory. All 20 cases are deterministic and redistributable with the project.",
+  "cases": [
+    {"id": "dots-s-000", "family": "dots-v1", "seed": 0, "structured": true, "source_group_id": "dots-000"},
+    {"id": "dots-n-000", "family": "dots-v1", "seed": 0, "structured": false, "source_group_id": "dots-000"},
+    {"id": "dots-s-001", "family": "dots-v1", "seed": 1, "structured": true, "source_group_id": "dots-001"},
+    {"id": "dots-n-001", "family": "dots-v1", "seed": 1, "structured": false, "source_group_id": "dots-001"},
+    {"id": "dots-s-002", "family": "dots-v1", "seed": 2, "structured": true, "source_group_id": "dots-002"},
+    {"id": "dots-n-002", "family": "dots-v1", "seed": 2, "structured": false, "source_group_id": "dots-002"},
+    {"id": "dots-s-003", "family": "dots-v1", "seed": 3, "structured": true, "source_group_id": "dots-003"},
+    {"id": "dots-n-003", "family": "dots-v1", "seed": 3, "structured": false, "source_group_id": "dots-003"},
+    {"id": "dots-s-004", "family": "dots-v1", "seed": 4, "structured": true, "source_group_id": "dots-004"},
+    {"id": "dots-n-004", "family": "dots-v1", "seed": 4, "structured": false, "source_group_id": "dots-004"},
+    {"id": "dots-s-005", "family": "dots-v1", "seed": 5, "structured": true, "source_group_id": "dots-005"},
+    {"id": "dots-n-005", "family": "dots-v1", "seed": 5, "structured": false, "source_group_id": "dots-005"},
+    {"id": "mosaic-s-040", "family": "polygon-mosaic-v1", "seed": 40, "structured": true, "source_group_id": "mosaic-040"},
+    {"id": "mosaic-n-040", "family": "polygon-mosaic-v1", "seed": 40, "structured": false, "source_group_id": "mosaic-040"},
+    {"id": "mosaic-s-041", "family": "polygon-mosaic-v1", "seed": 41, "structured": true, "source_group_id": "mosaic-041"},
+    {"id": "mosaic-n-041", "family": "polygon-mosaic-v1", "seed": 41, "structured": false, "source_group_id": "mosaic-041"},
+    {"id": "mosaic-s-042", "family": "polygon-mosaic-v1", "seed": 42, "structured": true, "source_group_id": "mosaic-042"},
+    {"id": "mosaic-n-042", "family": "polygon-mosaic-v1", "seed": 42, "structured": false, "source_group_id": "mosaic-042"},
+    {"id": "mosaic-s-043", "family": "polygon-mosaic-v1", "seed": 43, "structured": true, "source_group_id": "mosaic-043"},
+    {"id": "mosaic-n-043", "family": "polygon-mosaic-v1", "seed": 43, "structured": false, "source_group_id": "mosaic-043"}
+  ]
+}

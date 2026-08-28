@@ -1,0 +1,460 @@
+{
+  "schema_version": "0.5",
+  "algorithm_version": "cre-0.3.0a4",
+  "config_fingerprint": "8651eef22778",
+  "config": {
+    "analysis_max_side": 384,
+    "cluster_counts": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "projection_quantiles": [
+      0.08,
+      0.12,
+      0.25,
+      0.35,
+      0.65,
+      0.75,
+      0.88,
+      0.92
+    ],
+    "local_sigma_ratio": 0.045,
+    "min_occupancy": 0.015,
+    "max_occupancy": 0.985,
+    "duplicate_iou": 0.975,
+    "random_seed": 17,
+    "max_pixels": 50000000,
+    "max_file_bytes": 104857600,
+    "max_icc_profile_bytes": 4194304,
+    "max_burst_total_pixels": 80000000,
+    "presentation_max_side": 2048,
+    "max_kmeans_samples": 40000,
+    "kmeans_attempts": 2,
+    "confidence_threshold": 0.74,
+    "ambiguity_margin": 0.035
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "opencv": "4.14.0",
+    "pillow": "12.3.0"
+  },
+  "status": "ok",
+  "input": {
+    "source": "array",
+    "format": "array",
+    "icc_profile": "none",
+    "width": 480,
+    "height": 480,
+    "analysis_width": 384,
+    "analysis_height": 384,
+    "file_bytes": null,
+    "mode_requested": "digital",
+    "mode_resolved": "digital",
+    "geometry": {
+      "source": "full_image",
+      "analysis_width": 384,
+      "analysis_height": 384,
+      "forward_matrix": [
+        [
+          0.8,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.8,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inverse_matrix": [
+        [
+          1.25,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "corners": null
+    },
+    "photometry": {
+      "applied": false
+    },
+    "presentation": {
+      "width": 480,
+      "height": 480,
+      "max_side": 2048,
+      "scale_x": 1.0,
+      "scale_y": 1.0
+    }
+  },
+  "quality": {
+    "blur": 0.000277,
+    "clipping": 0.0,
+    "glare": 0.0,
+    "color_spread": 1.0,
+    "perspective": 0.0,
+    "shadow": 0.0,
+    "fold": 0.0,
+    "moire": 0.0,
+    "banding": 0.0,
+    "invalid_fraction": 0.0,
+    "texture_support": 0.656372,
+    "recoverable_fraction": 1.0,
+    "warnings": []
+  },
+  "semantics": {
+    "mode": "none"
+  },
+  "candidates": [
+    {
+      "id": "e69e3a5a0c56",
+      "rank": 1,
+      "mask_path": "mask_01.png",
+      "structure_mask_path": "structure_01.png",
+      "evidence_map_path": "evidence_01.png",
+      "overlay_path": "overlay_01.png",
+      "structure_score": 0.887936,
+      "structure_confidence": 0.887936,
+      "capture_confidence": 0.887877,
+      "decision_confidence": 0.887877,
+      "overall_confidence": 0.887877,
+      "source_hypothesis": "opponent:k4:c0",
+      "metrics": {
+        "occupancy": 0.164545,
+        "color_separation": 0.830836,
+        "spatial_structure": 0.935175,
+        "coarse_component": 0.944573,
+        "frame_focus": 0.911458,
+        "planar_explanation": 0.09524,
+        "boundary_evidence": 0.215524,
+        "cross_family_agreement": 0.842795,
+        "local_residual_support": 0.767341,
+        "quality_factor": 0.999934,
+        "invalid_overlap": 0.0,
+        "primitive_distribution_evidence": 0.0,
+        "foreground_prior": 1.0,
+        "runner_up_margin": 0.021019,
+        "runner_up_consensus_iou": 0.835056,
+        "margin_support": 0.600554,
+        "consensus_support": 1.0,
+        "ambiguity_support": 1.0,
+        "mosaic_distribution_score": 0.854647,
+        "decision_factor": 1.0,
+        "status_factor": 1.0
+      },
+      "warnings": [
+        "cross_hypothesis_consensus"
+      ],
+      "transform": {
+        "model": "full_image",
+        "analysis_to_original": [
+          [
+            1.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.25,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "original_to_analysis": [
+          [
+            0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "interpolation": "nearest",
+        "artifact_spaces": {
+          "mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "structure_mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "evidence_map": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "overlay": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "semantics": {}
+    },
+    {
+      "id": "a0871784099e",
+      "rank": 2,
+      "mask_path": "mask_02.png",
+      "structure_mask_path": "structure_02.png",
+      "evidence_map_path": "evidence_02.png",
+      "overlay_path": "overlay_02.png",
+      "structure_score": 0.866916,
+      "structure_confidence": 0.866916,
+      "capture_confidence": 0.866858,
+      "decision_confidence": 0.866858,
+      "overall_confidence": 0.866858,
+      "source_hypothesis": "global_lab:k4:c1",
+      "metrics": {
+        "occupancy": 0.137731,
+        "color_separation": 0.872205,
+        "spatial_structure": 0.837462,
+        "coarse_component": 0.944789,
+        "frame_focus": 0.923611,
+        "planar_explanation": 0.085415,
+        "boundary_evidence": 0.213692,
+        "cross_family_agreement": 0.896259,
+        "local_residual_support": 0.896259,
+        "quality_factor": 0.999934,
+        "invalid_overlap": 0.0,
+        "primitive_distribution_evidence": 0.0,
+        "foreground_prior": 1.0,
+        "decision_factor": 1.0,
+        "status_factor": 1.0
+      },
+      "warnings": [],
+      "transform": {
+        "model": "full_image",
+        "analysis_to_original": [
+          [
+            1.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.25,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "original_to_analysis": [
+          [
+            0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "interpolation": "nearest",
+        "artifact_spaces": {
+          "mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "structure_mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "evidence_map": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "overlay": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "semantics": {}
+    },
+    {
+      "id": "14e505b1bedd",
+      "rank": 3,
+      "mask_path": "mask_03.png",
+      "structure_mask_path": "structure_03.png",
+      "evidence_map_path": "evidence_03.png",
+      "overlay_path": "overlay_03.png",
+      "structure_score": 0.853145,
+      "structure_confidence": 0.853145,
+      "capture_confidence": 0.853089,
+      "decision_confidence": 0.853089,
+      "overall_confidence": 0.853089,
+      "source_hypothesis": "global_lab:k3:c0",
+      "metrics": {
+        "occupancy": 0.161651,
+        "color_separation": 0.848173,
+        "spatial_structure": 0.847418,
+        "coarse_component": 0.942546,
+        "frame_focus": 0.855903,
+        "planar_explanation": 0.062176,
+        "boundary_evidence": 0.201054,
+        "cross_family_agreement": 0.819149,
+        "local_residual_support": 0.811794,
+        "quality_factor": 0.999934,
+        "invalid_overlap": 0.0,
+        "primitive_distribution_evidence": 0.0,
+        "foreground_prior": 1.0,
+        "decision_factor": 1.0,
+        "status_factor": 1.0
+      },
+      "warnings": [],
+      "transform": {
+        "model": "full_image",
+        "analysis_to_original": [
+          [
+            1.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.25,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "original_to_analysis": [
+          [
+            0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "interpolation": "nearest",
+        "artifact_spaces": {
+          "mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "structure_mask": {
+            "coordinate_space": "original",
+            "width": 480,
+            "height": 480
+          },
+          "evidence_map": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "overlay": {
+            "coordinate_space": "presentation",
+            "width": 480,
+            "height": 480,
+            "original_to_artifact_scale": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "semantics": {}
+    }
+  ],
+  "debug": {},
+  "preprocess": [
+    "exif_orientation",
+    "convert_rgb",
+    "analysis_resize:384x384",
+    "analysis_resize:384x384",
+    "relative_chromatic_residuals",
+    "multi_family_hypotheses",
+    "contour_primitives",
+    "image_native_primitives",
+    "local_primitive_distribution",
+    "spatial_graph_grouping",
+    "structure_ranking",
+    "inverse_mask_mapping"
+  ],
+  "timing_ms": {
+    "decode": 9.36,
+    "color_and_quality": 90.558,
+    "hypotheses_and_ranking": 1505.647,
+    "presentation": 29.385,
+    "total": 1634.95
+  }
+}

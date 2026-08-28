@@ -1,0 +1,64 @@
+name: Recovery failure case
+description: Report a missed structure, false positive, or camera-processing failure.
+title: "[Failure case] "
+labels: ["failure-case", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve ChromaRecover. Only upload images you are allowed to
+        share. Remove names, faces, IDs, medical details, and location metadata first.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Input mode
+      options:
+        - digital
+        - camera
+        - camera-paper
+        - camera-screen
+        - auto
+    validations:
+      required: true
+  - type: dropdown
+    id: failure
+    attributes:
+      label: Failure type
+      options:
+        - Target missing from top candidates
+        - False positive / should abstain
+        - Mask mapped to the wrong location
+        - Perspective correction failure
+        - Glare, shadow, fold, or moire failure
+        - Screen refresh banding failure
+        - Digit semantics failure
+        - Crash or input rejection
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Describe the structure that should be recovered or why the tool should abstain.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Actual result
+      description: Attach result.json and, if safe to share, the input and a reference mask.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: ChromaRecover version or commit
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy and permission
+      options:
+        - label: I have permission to share the uploaded material and removed sensitive metadata.
+          required: true

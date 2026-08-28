@@ -1,0 +1,44 @@
+name: Feature request
+description: Propose a user-facing capability, evidence family, output, or integration.
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the user need or failure mode before proposing an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain inputs, outputs, failure handling and how abstention should behave.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Core recovery
+        - Camera processing
+        - Semantics
+        - CLI or Python API
+        - Output or accessibility
+        - Performance or memory
+        - Dataset or evaluation
+        - Documentation or community
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and test ideas
+      description: Suggest a deterministic regression, hard negative, or licensed source group.
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Risks and alternatives
+      description: Note privacy, security, dependency, confidence, compatibility, or runtime costs.

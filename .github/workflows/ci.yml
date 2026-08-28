@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install "ruff>=0.8,<1"
+      - run: python -m ruff check .
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python-version: "3.10"
+            numpy-version: "1.26.4"
+            opencv-version: "4.10.0.84"
+          - python-version: "3.10"
+            numpy-version: "2.2.6"
+            opencv-version: "4.14.0.94"
+          - python-version: "3.11"
+            numpy-version: "2.4.4"
+            opencv-version: "4.14.0.94"
+          - python-version: "3.12"
+            numpy-version: "2.4.4"
+            opencv-version: "4.14.0.94"
+          - python-version: "3.13"
+            numpy-version: "2.4.4"
+            opencv-version: "4.14.0.94"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: >-
+          python -m pip install
+          "numpy==${{ matrix.numpy-version }}"
+          "opencv-python-headless==${{ matrix.opencv-version }}"
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest
+
+  benchmarks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: >-
+          python -m pip install
+          "numpy==2.4.4"
+          "opencv-python-headless==4.14.0.94"
+      - run: python -m pip install -e ".[dev]"
+      - run: python benchmark/evaluate_synthetic.py --count 10 --size 128 --assert-thresholds
+      - run: python benchmark/evaluate_synthetic.py --count 10 --size 192 --assert-thresholds
+      - run: python benchmark/evaluate_nuisance.py --count 20 --size 160 --assert-thresholds
+      - run: python benchmark/evaluate_nuisance.py --count 10 --size 384 --assert-thresholds
+      - run: python benchmark/evaluate_mosaic.py --count 4 --size 192 --assert-thresholds
