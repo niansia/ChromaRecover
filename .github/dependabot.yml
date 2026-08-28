@@ -15,6 +15,15 @@ updates:
         dependency-type: development
         patterns:
           - "*"
+    ignore:
+      # Major numerical/vision releases require an explicit compatibility sprint with the
+      # full test and benchmark suite before the public runtime range is widened.
+      - dependency-name: numpy
+        update-types:
+          - version-update:semver-major
+      - dependency-name: opencv-python-headless
+        update-types:
+          - version-update:semver-major
 
   - package-ecosystem: github-actions
     directory: "/"
