@@ -17,8 +17,9 @@ its public API reaches 1.0.
   can identify the repository license; move project attribution to `NOTICE`.
 - Present the README architecture as a system architecture and link directly to the live
   starter issues now that the repository is public.
-- Make Dependabot ignore NumPy and OpenCV major-version updates until a dedicated
-  compatibility matrix validates them.
+- Show the selected-pixel mask in the README demo so the recovered `820` remains legible.
+- Make Dependabot explicitly ignore NumPy 3+ and OpenCV 5+ so constraint-widening pull
+  requests remain blocked until a dedicated compatibility matrix validates them.
 
 ## 0.3.0a4 - 2026-08-29
 

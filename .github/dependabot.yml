@@ -16,14 +16,14 @@ updates:
         patterns:
           - "*"
     ignore:
-      # Major numerical/vision releases require an explicit compatibility sprint with the
-      # full test and benchmark suite before the public runtime range is widened.
+      # Explicit version ranges also block constraint-widening PRs. Major numerical/vision
+      # releases require a compatibility sprint before the public runtime range is widened.
       - dependency-name: numpy
-        update-types:
-          - version-update:semver-major
+        versions:
+          - ">=3"
       - dependency-name: opencv-python-headless
-        update-types:
-          - version-update:semver-major
+        versions:
+          - ">=5"
 
   - package-ecosystem: github-actions
     directory: "/"

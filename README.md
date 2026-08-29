@@ -21,9 +21,9 @@ an explicit `ok`, `uncertain` or `retry_recommended` status instead of forcing a
 > device-held-out calibration.
 > Confidence is deliberately conservative and is not calibrated on device-held-out data.
 
-| Matched-histogram mosaic | Continuous evidence | Auditable overlay |
+| Matched-histogram mosaic | Continuous evidence | Selected pixels |
 | --- | --- | --- |
-| ![Generated polygon mosaic](examples/digital/demo_input.png) | ![Recovered continuous evidence](examples/digital/demo_result/evidence_01.png) | ![Recovered overlay](examples/digital/demo_result/overlay_01.png) |
+| ![Generated polygon mosaic](examples/digital/demo_input.png) | ![Recovered continuous evidence](examples/digital/demo_result/evidence_01.png) | ![Recovered selected pixels](examples/digital/demo_result/mask_01.png) |
 
 This repository-owned generated case hides `820` in the local population of one polygon
 color, while using the same number of special-color primitives as its random negative. The
