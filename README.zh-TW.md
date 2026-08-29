@@ -12,9 +12,9 @@ ChromaRecover 是一套本機優先的 Python 工具，用來復原並呈現由�
 
 > Alpha 範圍：digital mode 是目前穩定的基線。實驗性 Camera Alpha 提供保守的文件透視校正／展平、紙張與螢幕拍攝設定、多幀融合、反光無效區標記、輕度復原假設，以及證據回映射到原始照片。`mode="auto"` 會辨識明顯的螢幕摩爾紋，否則回退到 digital。紙張照片在取得獨立裝置留出校準前，請明確選擇 `camera-paper`。目前信心度採保守設計，尚未以獨立裝置資料完成校準。
 
-| 直方圖匹配的馬賽克 | 連續證據 | 可稽核疊圖 |
+| 直方圖匹配的馬賽克 | 連續證據 | 選出的像素 |
 | --- | --- | --- |
-| ![產生的多邊形馬賽克](examples/digital/demo_input.png) | ![復原的連續證據](examples/digital/demo_result/evidence_01.png) | ![復原疊圖](examples/digital/demo_result/overlay_01.png) |
+| ![產生的多邊形馬賽克](examples/digital/demo_input.png) | ![復原的連續證據](examples/digital/demo_result/evidence_01.png) | ![復原後選出的像素](examples/digital/demo_result/mask_01.png) |
 
 這個由專案自行產生的案例，將 `820` 隱藏在某一種多邊形顏色的局部密度中，並讓隨機負例具有相同數量的特殊色彩元件。證據圖會把空間訊號顯示出來；此決定性案例回傳 `ok`，而存在多個同樣合理遮罩的案例會維持 `uncertain`。這是 evidence-first 的預期行為，不是 OCR 承諾。
 
